@@ -1,0 +1,79 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Page Header CSS
+----------------------------------------*/
+
+.process-wrap{
+    position: relative;
+    &:before{
+        background-color: #5F5F5F;
+        content: "";
+        width: 98%;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.process-item{
+    background-color: var(--cp-color-common-white);
+    padding: 50px;
+    border-radius: 8px;
+    position: relative;
+    margin-top: 70px;
+    @include breakpoint(lg){
+        padding: 50px 30px;
+    }
+    .number{
+        background-color: var(--cp-color-bg-1);
+        color: var(--cp-color-common-white);
+        font-family: var(--cp-ff-secondary);
+        font-size: 16px;
+        font-weight: 500;
+        border: 1px solid #5F5F5F;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        @include flex-center;
+        position: absolute;
+        top: -90px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include transition(all 0.3s ease-in-out);
+        @include breakpoint(md){
+            display: none;
+        }
+    }
+    .icon{
+        margin-bottom: 100px;
+    }
+    .content{
+        .title{
+            color: var(--cp-color-text-black);
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 20px;
+            color: var(--cp-color-text-black);
+            margin-bottom: 0;
+        }
+    }
+    &:hover{
+        .number{
+            background-color: var(--cp-color-theme-primary);
+            color: var(--cp-color-text-black);
+        }
+    }
+    &.item-2{
+        @include breakpoint(md){
+            margin-top: 24px;
+        }
+    }
+}
+
+/* !END: Page Header CSS */

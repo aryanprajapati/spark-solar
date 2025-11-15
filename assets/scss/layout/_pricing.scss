@@ -1,0 +1,58 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Pricing CSS
+----------------------------------------*/
+
+.pricing-item{
+    background-color: var(--cp-color-grey-1);
+    padding: 45px;
+    border-radius: 8px;
+    border: 1px solid #C5C5C7;
+    .title{
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .pricing-offer{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .price{
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 1;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid var(--cp-color-border-1);
+    }
+    .pricing-list{
+        list-style: none;
+        margin-bottom: 40px;
+        li{
+            @include flex-vertical-center;
+            line-height: 1;
+            &:not(:last-of-type){
+                margin-bottom: 20px;
+            }
+            i{
+                color: var(--cp-color-bg-1);
+                width: 25px;
+            }
+            &.cross-icon{
+                i{
+                    color: var(--cp-color-bg-1);
+                }
+            }
+        }
+    }
+    .pricing-btn{
+        .cp-primary-btn{
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
+
+
+/* !END: Pricing CSS */

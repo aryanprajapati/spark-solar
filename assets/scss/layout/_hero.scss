@@ -1,0 +1,357 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Hero CSS
+----------------------------------------*/
+
+.hero-section{
+    background-color: var(--cp-color-bg-1);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .bg-shape{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+.hero-container{
+    max-width: 1445px;
+}
+
+.hero-content{
+    position: relative;
+    text-align: center;
+    padding: 190px 0 190px 0;
+    @include breakpoint(md){
+        padding: 100px 0 100px 0;
+    }
+    @include breakpoint(sm){
+        padding-top: 40px;
+    }
+    .title{
+        color: var(--cp-color-common-white);
+        font-size: 100px;
+        font-weight: 500;
+        line-height: 1.15;
+        text-transform: uppercase;
+        margin-bottom: 210px;
+        letter-spacing: 1.5px;
+        @include breakpoint(xxl){
+            font-size: 80px;
+        }
+        @include breakpoint(md){
+            font-size: 50px;
+            margin-bottom: 150px;
+        }
+        @include breakpoint(sm){
+            font-size: 35px;
+            line-height: 1.5;
+            margin-bottom: 50px;
+            br{
+                display: block;
+            }
+        }
+    }
+    .hero-bottom-content{
+        @include flex-vertical-center;
+        justify-content: space-between;
+        column-gap: 30px;
+        flex-wrap: wrap;
+        row-gap: 30px;
+        margin-top: 65px;
+        @include breakpoint(sm){
+            margin-top: 30px;
+            flex-wrap: wrap;
+            row-gap: 20px;
+        }
+        .hero-client-wrap{
+            max-width: 450px;
+            width: 100%;
+            .hero-author-list{
+                @include flex-vertical-center;
+                li{
+                    height: 56px;
+                    width: 56px;
+                    @include flex-center;
+                    border-radius: 50%;
+                    border: 3px solid var(--cp-color-common-white);
+                    &:not(:first-of-type){
+                        margin-left: -20px;
+                    }
+                    &.icon{
+                        background-color: var(--cp-color-theme-primary);
+                        color: var(--cp-color-text-black);
+                    }
+                }
+            }
+            .desc{
+                font-family: var(--cp-ff-heading);
+                color: var(--cp-color-common-white);
+                font-size: 18px;
+                font-weight: 400;
+                text-align: left;
+            }
+        }
+        .hero-thumb{
+            animation-name: spin;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+    .hero-img-1{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 800px;
+        width: 100%;
+        height: 500px;
+        @include breakpoint(xl){
+            max-width: 650px;
+        }
+        @include breakpoint(lg){
+            max-width: 550px;
+        }
+        @include breakpoint(md){
+            max-width: 350px;
+            height: 350px;
+            margin-left: 30px;
+        }
+        @include breakpoint(sm){
+            display: none;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+// Hero 2
+
+.hero-section-2{
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    .bg-img{
+        @include background;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        &:before{
+            background: linear-gradient(0deg, rgba(0, 36, 31, 0.5), rgba(0, 36, 31, 0.5));
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+    .hero-container{
+        max-width: 1545px;
+    }
+}
+
+.hero-content-2{
+    padding: 600px 0 75px 0;
+    @include flex-vertical-center;
+    justify-content: space-between;
+    @include breakpoint(md){
+        padding-top: 300px;
+    }
+    @include breakpoint(sm){
+        flex-wrap: wrap;
+        row-gap: 30px;
+    }
+    .title{
+        color: var(--cp-color-common-white);
+        font-size: 120px;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-bottom: 0;
+        @include breakpoint(md){
+            font-size: 70px;
+        }
+        @include breakpoint(sm){
+            font-size: 40px;
+        }
+        .text-big{
+            display: block;
+            font-size: 280px;
+            line-height: 1;
+            margin-left: -5px;
+            margin-top: -35px;
+            @include breakpoint(xl){
+                font-size: 200px;
+                margin-left: 0;
+                margin-top: -25px;
+            }
+            @include breakpoint(md){
+                font-size: 120px;
+                margin-top: 0px;
+            }
+            @include breakpoint(sm){
+                font-size: 70px;
+            }
+        }
+    }
+    .hero-btn-wrap{
+        position: relative;
+        z-index: 5;
+        a{
+            background-color: var(--cp-color-theme-primary);
+            height: 146px;
+            width: 146px;
+            @include flex-center;
+            border-radius: 50%;
+            img{
+                animation-name: spin;
+                animation-duration: 15s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+    }
+}
+
+
+// Hero 3
+
+.hero-section-3{
+    background-color: #F4F4F4;
+}
+
+.hero-wrap-3{
+    padding: 66px 0 100px 0;
+    position: relative;
+    @include breakpoint(sm){
+        padding-bottom: 60px;
+    }
+    .hero-counter{
+        background-color: var(--cp-color-bg-1);
+        max-width: 370px;
+        width: 100%;
+        padding: 40px;
+        position: absolute;
+        bottom: -60px;
+        right: 0;
+        display: inline-block;
+        border-radius: 8px;
+        @include breakpoint(sm){
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: auto;
+            margin-top: 40px;
+        }
+        .counter-title{
+            font-family: var(--cp-ff-heading);
+            color: var(--cp-color-common-white);
+            font-size: 84px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            @include flex-vertical-center;
+            .odometer-auto-theme{
+                line-height: 1;
+                font-family: inherit;
+            }
+        }
+        p{
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--cp-color-common-white);
+            margin-bottom: 0;
+        }
+    }
+}
+
+.hero-content-3{
+    .title{
+        font-size: 72px;
+        font-weight: 500;
+        margin-bottom: 0;
+        @include breakpoint(md){
+            font-size: 60px;
+        }
+        @include breakpoint(sm){
+            font-size: 40px;
+        }
+    }
+    .hero-btn-wrap{
+        @include flex-vertical-center;
+        column-gap: 40px;
+        flex-wrap: wrap;
+        row-gap: 30px;
+        margin-top: 45px;
+        @include breakpoint(md){
+            flex-direction: column;
+            row-gap: 30px;
+            align-items: baseline;
+        }
+        .hero-client-wrap{
+            @include flex-vertical-center;
+            column-gap: 20px;
+            .hero-author-list{
+                @include flex-vertical-center;
+                li{
+                    height: 56px;
+                    width: 56px;
+                    @include flex-center;
+                    border-radius: 50%;
+                    border: 3px solid var(--cp-color-common-white);
+                    &:not(:first-of-type){
+                        margin-left: -20px;
+                    }
+                    &.icon{
+                        background-color: var(--cp-color-theme-primary);
+                        color: var(--cp-color-text-black);
+                    }
+                }
+            }
+            .desc{
+                font-family: var(--cp-ff-heading);
+                color: var(--cp-color-heading-primary);
+                font-size: 18px;
+                font-weight: 500;
+                text-align: left;
+                margin-bottom: 0;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+.hero-img-3{
+    width: 100%;
+    height: 800px;
+    @include breakpoint(md){
+        height: 500px;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* !END: Hero CSS */

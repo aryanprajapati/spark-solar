@@ -1,0 +1,85 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Contact CSS
+----------------------------------------*/
+
+.contact-content{
+    .contact-title{
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    .contact-items{
+        .contact-item{
+            &:not(:last-of-type){
+                margin-bottom: 30px;
+            }
+            span{
+                font-size: 16px;
+                font-weight: 500;
+                display: block;
+                line-height: 1;
+                margin-bottom: 5px;
+            }
+            p,
+            a{
+                font-family: var(--cp-ff-heading);
+                color: var(--cp-color-heading-primary);
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.blog-contact-form.form-2{
+    background-color: var(--cp-color-bg-1);
+    padding: 45px;
+    border-radius: 16px;
+    @include breakpoint(sm){
+        padding: 40px 20px;
+    }
+    .section-heading{
+        .section-title{
+            font-size: 48px;
+            @include breakpoint(sm){
+                font-size: 36px;
+            }
+        }
+    }
+    .request-form{
+        .form-item{
+            .form-control{
+                background-color: transparent;
+                border-radius: 6px;
+                border: none;
+                padding: 0;
+                color: var(--cp-color-common-white);
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 0;
+                @include tp-placeholder{
+                    color: var(--cp-color-common-white);
+                }
+            }
+        }
+    }
+    .cp-primary-btn{
+        &:before{
+            background-color: var(--cp-color-common-white);
+        }
+        &:hover{
+            color: var(--cp-color-heading-primary);
+        }
+    }
+}
+
+.map-wrapper{
+    iframe{
+        border-radius: 16px;
+    }
+}
+
+/* !END: Theme Contact CSS */

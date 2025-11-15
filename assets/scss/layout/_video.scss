@@ -1,0 +1,114 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Video CSS
+----------------------------------------*/
+
+.video-section{
+    height: 800px;
+    position: relative;
+    z-index: 1;
+    @include breakpoint(lg){
+        height: 550px;
+    }
+    .bg-img{
+        @include background;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .play-btn{
+        position: relative;
+        z-index: 5;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        a{
+            background-color: var(--cp-color-common-white);
+            color: var(--cp-color-heading-primary);
+            height: 100px;
+            width: 100px;
+            @include flex-center;
+            border-radius: 50%;
+            &:hover{
+                background-color: var(--cp-color-bg-1);
+                color: var(--cp-color-common-white);
+            }
+        }
+        i{
+            font-size: 26px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.video-section-2{
+    .overlay{
+        background-color: #004037;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.6;
+    }
+    .video-content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        .title{
+            color: var(--cp-color-common-white);
+            font-size: 180px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            @include breakpoint(lg){
+                font-size: 120px;
+            }
+            @include breakpoint(lg){
+                font-size: 70px;
+            }
+            span{
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: var(--cp-color-common-white);
+            }
+        }
+        .play-btn{
+            position: relative;
+            top: inherit;
+            left: inherit;
+            transform: inherit;
+        }
+        .cp-primary-btn{
+            height: auto;
+            width: auto;
+            border-radius: 8px;
+            display: inline-block;
+            i{
+                position: relative;
+                transform: inherit;
+                top: inherit;
+                left: inherit;
+                font-size: 14px;
+                margin-left: 0;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+/* !END: Video CSS */
