@@ -8296,3 +8296,7 @@ START: Footer CSS
 .service-carousel .swiper-slide .service-item{
   height: 100%;
 }
+
+body{
+  overflow-x: hidden;
+}
